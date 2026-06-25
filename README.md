@@ -6,6 +6,8 @@
 ![Keepalived](https://img.shields.io/badge/Keepalived-VRRP%20VIP-2E7D32?style=for-the-badge)
 ![YAML](https://img.shields.io/badge/Template-YAML-64748B?style=for-the-badge&logo=yaml&logoColor=white)
 
+![Dashboard Zabbix MariaDB Galera](./galera-dashboard.png)
+
 Ce paquet contient un template Zabbix pour 3 noeuds MariaDB Galera, chacun avec HAProxy et Keepalived.
 Il supervise chaque noeud localement via `zabbix-agent` classique.
 
