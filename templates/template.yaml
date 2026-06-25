@@ -280,7 +280,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: E58F8F
@@ -309,7 +309,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: E58F8F
@@ -338,7 +338,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: E58F8F
@@ -367,7 +367,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: E58F8F
@@ -396,7 +396,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: E58F8F
@@ -425,7 +425,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: 94A3B8
@@ -457,7 +457,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: E58F8F
@@ -493,7 +493,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                 - type: item
                   name: 'HAProxy process'
                   x: '24'
@@ -511,7 +511,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: E58F8F
@@ -541,7 +541,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: E58F8F
@@ -574,7 +574,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: E58F8F
@@ -610,7 +610,7 @@ zabbix_export:
                       value: '2'
                     - type: INTEGER
                       name: value_size
-                      value: '30'
+                      value: '22'
                     - type: STRING
                       name: thresholds.0.color
                       value: E58F8F
@@ -715,6 +715,4 @@ zabbix_export:
               newvalue: 'Standby'
             - value: '1'
               newvalue: 'Owner'
-
-
 
