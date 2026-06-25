@@ -8,11 +8,17 @@
 
 Ce paquet contient un template Zabbix pour 3 noeuds MariaDB Galera, chacun avec HAProxy et Keepalived.
 
-Fichiers :
+Fichiers du repo :
 
 - `templates/template.yaml` : template a importer dans Zabbix.
 - `zabbix_agentd.conf.d/agent.conf` : cles `UserParameter` pour `zabbix-agent`.
-- `scripts/check.sh` : script appele par l'agent.
+- `scripts/check.sh` : script de collecte appele par l'agent.
+
+Chemins installes sur chaque noeud :
+
+- `/usr/local/bin/galera-check.sh` : script de collecte.
+- `/etc/zabbix/zabbix_agentd.d/galera.conf` : configuration `UserParameter`.
+- `/etc/zabbix/.my.cnf` : credentials MariaDB utilises par le script.
 
 ## Ce qui est supervise
 
