@@ -39,8 +39,8 @@ sudo apt install -y mariadb-client socat iproute2 procps
 Creer un utilisateur MariaDB de supervision :
 
 ```sql
-CREATE USER 'zabbix_monitor'@'localhost' IDENTIFIED BY 'ChangeThisPassword';
-GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'zabbix_monitor'@'localhost';
+CREATE USER 'zabbix-monitor'@'localhost' IDENTIFIED BY 'ChangeThisPassword';
+GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'zabbix-monitor'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
