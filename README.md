@@ -17,7 +17,7 @@ Fichiers du repo :
 Chemins installes sur chaque noeud :
 
 - `/usr/local/bin/galera-check.sh` : script de collecte.
-- `/etc/zabbix/zabbix_agentd.d/galera.conf` : configuration `UserParameter`.
+- `/etc/zabbix/zabbix_agentd.conf.d/galera.conf` : configuration `UserParameter`.
 - `/etc/zabbix/.my.cnf` : credentials MariaDB utilises par le script.
 
 ## Ce qui est supervise
@@ -33,7 +33,7 @@ Copier les fichiers :
 
 ```bash
 sudo install -o root -g root -m 0755 scripts/check.sh /usr/local/bin/galera-check.sh
-sudo install -o root -g root -m 0644 zabbix_agentd.conf.d/agent.conf /etc/zabbix/zabbix_agentd.d/galera.conf
+sudo install -o root -g root -m 0644 zabbix_agentd.conf.d/agent.conf /etc/zabbix/zabbix_agentd.conf.d/galera.conf
 ```
 
 Installer les dependances :
@@ -56,7 +56,7 @@ Creer le fichier de credentials :
 sudo install -o zabbix -g zabbix -m 0600 /dev/null /etc/zabbix/.my.cnf
 sudo tee /etc/zabbix/.my.cnf >/dev/null <<'EOF'
 [client]
-user=zabbix_monitor
+user=zabbix-monitor
 password=ChangeThisPassword
 host=localhost
 port=3306
