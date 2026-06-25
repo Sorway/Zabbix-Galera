@@ -7,6 +7,7 @@
 ![YAML](https://img.shields.io/badge/Template-YAML-64748B?style=for-the-badge&logo=yaml&logoColor=white)
 
 Ce paquet contient un template Zabbix pour 3 noeuds MariaDB Galera, chacun avec HAProxy et Keepalived.
+Il supervise chaque noeud localement via `zabbix-agent` classique.
 
 Fichiers du repo :
 
@@ -70,14 +71,15 @@ sudo chmod 0600 /etc/zabbix/.my.cnf
 Le template lit l'etat des backends via le socket stats local. Ajouter dans `global` :
 
 ```haproxy
-stats socket /run/haproxy/admin.sock mode 660 level admin
+stats socket /run/haproxy/admin.sock user haproxy group zabbix mode 660 level admin
 stats timeout 2s
 ```
 
-Selon la distribution, il faut aussi que l'utilisateur `zabbix` puisse lire le socket :
+Le script compte les backends `UP` dans le backend HAProxy nomme `galera_back`. Si votre backend HAProxy porte un autre nom, modifier la fonction `haproxy_backends_up_count` dans `/usr/local/bin/galera-check.sh`.
+
+Redemarrer les services :
 
 ```bash
-sudo usermod -aG haproxy zabbix
 sudo systemctl restart haproxy
 sudo systemctl restart zabbix-agent
 ```
@@ -100,6 +102,8 @@ sudo -u zabbix /usr/local/bin/galera-check.sh keepalived.vip.present 192.168.10.
    - `{$GALERA.EXPECTED_SIZE}` = `3`
    - `{$HAPROXY.MIN_BACKENDS_UP}` = `2`
    - `{$KEEPALIVED.VIP}` = adresse VIP Keepalived du cluster, par exemple `192.168.10.40`
+
+Le dashboard inclus est optimise pour un cluster 3 noeuds avec au moins 2 backends HAProxy disponibles. Les triggers utilisent les macros ci-dessus. Les seuils de couleur du dashboard sont fixes pour eviter les erreurs d'import Zabbix sur les seuils avec macros.
 
 ## Dashboard inclus
 
@@ -147,3 +151,5 @@ Si la VIP, le port HAProxy ou le chemin du socket changent, modifier les variabl
 HAPROXY_SOCKET="${HAPROXY_SOCKET:-/run/haproxy/admin.sock}"
 MYSQL_FRONT_PORT="${MYSQL_FRONT_PORT:-3307}"
 ```
+
+Si le port frontend HAProxy change, modifier aussi la ligne correspondante dans `zabbix_agentd.conf.d/agent.conf` avant de recopier le fichier sur les noeuds.
