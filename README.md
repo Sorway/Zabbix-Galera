@@ -4,7 +4,6 @@
 ![MariaDB Galera](https://img.shields.io/badge/MariaDB-Galera-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 ![HAProxy](https://img.shields.io/badge/HAProxy-local-1065A8?style=for-the-badge&logo=haproxy&logoColor=white)
 ![Keepalived](https://img.shields.io/badge/Keepalived-VRRP%20VIP-2E7D32?style=for-the-badge)
-![Zabbix Agent](https://img.shields.io/badge/Agent-classic-F28C28?style=for-the-badge)
 ![YAML](https://img.shields.io/badge/Template-YAML-64748B?style=for-the-badge&logo=yaml&logoColor=white)
 
 Ce paquet contient un template Zabbix pour 3 noeuds MariaDB Galera, chacun avec HAProxy et Keepalived.
